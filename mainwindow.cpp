@@ -12,3 +12,16 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+///
+/// \brief MainWindow::on_pushButtonRun_clicked
+///
+void MainWindow::on_pushButtonRun_clicked()
+{
+    if (ui->pushButtonRun->text() == "Run") {
+        ui->pushButtonRun->setText("Stop");
+    } else {
+        ui->pushButtonRun->setText("Run");
+    }
+}
+
