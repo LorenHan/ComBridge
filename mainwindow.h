@@ -6,6 +6,7 @@
 #include <QSerialPortInfo>
 #include <QTimer>
 #include <QMessageBox>
+#include <QSettings>
 
 #include "myserialport.h"
 
@@ -33,11 +34,9 @@ private slots:
 private:
     Ui::MainWindow *ui;
     MySerialPort *m_serialCOM;  // 测试设备连接的串口
-    MySerialPort *serialTypeC;  // 驱动器连接的串口
+    MySerialPort *m_serialTypeC;  // 驱动器连接的串口
     QTimer *m_timer;           // 定时器
-
-protected:
-    void showEvent(QShowEvent *event);
+    QSettings *m_settings;     // 用于记忆串口号和波特率
 };
 
 #endif // MAINWINDOW_H
